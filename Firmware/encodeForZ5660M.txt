@@ -1,0 +1,21 @@
+///*******************************************************************************
+void N614_I2CClass::encodeForZ5660M(unsigned short toDisplay, unsigned short *bankA, unsigned short *bankB, unsigned short dot)
+{
+	if (dot >0) dot = 4;
+
+	switch (toDisplay)
+	{
+	case 2: *bankA = 1; *bankB = 0 + dot; break;
+	case 3: *bankA = 2; *bankB = 0 + dot; break;
+	case 4: *bankA = 4; *bankB = 0 + dot; break;
+	case 5: *bankA = 8; *bankB = 0 + dot; break;
+	case 6: *bankA = 16; *bankB = 0 + dot; break;
+	case 7: *bankA = 32; *bankB = 0 + dot; break;
+	case 8: *bankA = 64; *bankB = 0 + dot; break;
+	case 9: *bankA = 128; *bankB = 0 + dot; break;
+	case 0: *bankA = 0; *bankB = 2 + dot; break;
+	case 1: *bankA = 0; *bankB = 1 + dot; break;
+	case blank_IN14: *bankA = 0; *bankB = 0; break;
+	default: *bankA = 0; *bankB = 0;
+	}
+}
